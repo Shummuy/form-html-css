@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Forms</title>
+</head>
+<body>
+
+    <form action="" id="formSubmit" class="forms">
+
+        <h1 class="centro">Formulário</h1>
+
+        <label for="name">Nome*</label>
+        <input id="name" type="text" required>
+        <label for="email">E-mail*</label>
+        <input id="email" type="email" required>
+        <label for="phone">Telefone*</label>
+        <input id="phone" type="tel" required>
+
+        <div class="centro">
+        <p>Disponibilidade de horário</p>
+        <div class="checkboxBtn">
+        <label for="manha">Manhã</label>
+        <input type="checkbox" id="manha">
+        <label for="tarde">Tarde</label>
+        <input type="checkbox" id="tarde">
+        <label for="noite">Noite</label>
+        <input type="checkbox" id="noite">
+        </div>
+        </div>
+
+        <label for="sobre-voce">Fale de você*</label>
+        <textarea name="text" id="sobre-voce" cols="30" rows="10" minlength="20" required></textarea>
+
+        <label for="genero">Gênero</label>
+        <div class="select">
+        <select name="" id="genero">
+            <option value="prefiro não identificar">Prefiro não identificar</option>
+            <option value="masculino">Masculino</option>
+            <option value="feminino">Feminino</option>
+        </select>
+        </div>
+
+        <p class="centro">Podemos te cadastrar em nosso banco de vagas?</p>
+            <div class="centro">
+                <input id="sim" type="radio" name="slider" checked>
+                <label class="radioBtn" for="sim">Sim</label>
+                <input id="nao" type="radio" name="slider">
+                <label class="radioBtn" for="nao">Não</label>
+            </div>
+            <button type="submit" form="formSubmit" class="centro">Enviar</button>
+            </div>
+    
+
+        </form>
+
+</body>
+</html>
