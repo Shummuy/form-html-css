@@ -6,6 +6,75 @@
     font-size: 16px;
 }
 
+.body {
+    display: flex;
+}
+
+.switch {
+    width: 56px;
+    height: 30px;
+    position: absolute;
+    background: #ffffff;
+    border: 1px solid #000000;
+    border-radius: 5px;
+    padding: 0;
+    margin: 30px;
+    top: 10px;
+    right: 0px;
+    cursor: pointer;
+}
+
+.switch:after {
+    content: "";
+    width: 29px;
+    height: 29px;
+    position: absolute;
+    background-color: rgb(0, 0, 0);
+    border-radius: 4px;
+}
+
+#active {
+    padding: 0;
+    margin: 30px;
+    position: absolute;
+    right: 0;
+    visibility: hidden;
+}
+
+#active:checked + .body .switch-mode .switch:after  {
+    left: 25px;
+}
+
+#active:checked ~ .body {
+    background: #3f3f3f;
+    color: rgb(233, 233, 233);
+}
+
+svg {
+    position: absolute;
+    width:50px;
+    height: 25px;
+    color: white;
+    z-index: 10;
+}
+
+svg:nth-child(1){
+    left: -12px;
+}
+svg:nth-child(2){
+    left: 16px;
+}
+
+.forms {
+    padding: 20px 20px;
+    margin: 30px auto;
+    width: 600px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+}
+
 h1 {
     font-size: 22px;
     text-transform:uppercase;
@@ -15,25 +84,11 @@ h1 {
     margin: 10px auto;
 }
 
-.centro-margin {
-    margin: 15px auto;
-}
-
-.forms {
-    padding: 20px 20px;
-    border: 1px solid #ddd;
-    margin: 30px auto;
-    max-width: 500px;
-    display: flex;
-    flex-direction: column;
-    border-radius: 10px;
-}
-
 input, label, textarea, select {
     margin-bottom: 10px;
 }
 
-input {
+input, textarea {
     border: 1px solid #ddd;
     border-radius: 4px;
 }
@@ -48,46 +103,8 @@ textarea {
     padding: 5px 5px;
 }
 
-.forms div p {
+p {
     margin-bottom: 10px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-button {
-    background-color: rgb(255, 255, 255);
-    border: 1px solid black;
-    font-weight: bold;
-    border-radius: 5px;
-    color: rgb(0, 0, 0);
-    padding: 10px 40px;
-}
-
-button:hover {
-    background-color: rgb(0, 0, 0);
-    color: white;
-    animation: btnOpacity 0.3s;
-}
-
-input[type="radio"] {
-    display: none;
-}
-
-.radioBtn {
-    position: relative;
-    font-size: 16px;
-    border: 1px solid #ddd;
-    padding: 7px 14px;
-    display: flex;
-    align-items: center;
-    border-radius: 5px;
-}
-
-input[type="radio"]:checked + label {
-    background-color: rgb(0, 0, 0);
-    font-weight: bold;
-    color: white;
 }
 
 .checkboxBtn {
@@ -137,11 +154,61 @@ select {
     pointer-events: none;
 }
 
+button {
+    background-color: rgb(255, 255, 255);
+    border: 1px solid black;
+    font-weight: bold;
+    border-radius: 5px;
+    color: rgb(0, 0, 0);
+    padding: 10px 40px;
+}
+
+button:hover {
+    background-color: rgb(0, 0, 0);
+    color: white;
+    animation: btnOpacity 0.3s;
+}
+
+input[type="radio"] {
+    display: none;
+}
+
+.radioBtn {
+    position: relative;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    padding: 7px 14px;
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+}
+
+input[type="radio"]:checked + label {
+    background-color: rgb(0, 0, 0);
+    font-weight: bold;
+    color: white;
+}
+
 @keyframes btnOpacity {
     from {
         opacity: 0%
     }
     to {
         opacity: 100
+    }
+}
+
+@media (max-width: 800px) {
+    .body {
+        /* background: red; */
+    }
+    .forms {
+        width: 550px;
+    }
+}
+
+@media (max-width: 700px) {
+    .forms {
+        width: 450px;
     }
 }
